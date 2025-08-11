@@ -12,7 +12,7 @@
 	<groupId>com.espe.gimnasio</groupId>
 	<artifactId>backendGimnasioV2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>backendGimnasioV2</name>
 	<description>Demo project for Spring Boot</description>
 	<url />
