@@ -28,20 +28,20 @@ public class ApplicationConfig {
         return configuration.getAuthenticationManager();
     }
 
-    // @Bean
-    // public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    //     http
-    //         .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Habilita CORS
-    //         .csrf(csrf -> csrf.disable()) // Desactiva CSRF para APIs REST
-    //         .authorizeHttpRequests(auth -> auth
-    //             .requestMatchers("/api/**").permitAll() // Permite login y registro
-    //             .anyRequest().permitAll() // Requiere autenticación para todo lo demás
-    //         )
-    //         .sessionManagement(session -> session
-    //             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)); // Sin sesiones
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+            .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Habilita CORS
+            .csrf(csrf -> csrf.disable()) // Desactiva CSRF para APIs REST
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/**").permitAll() // Permite login y registro
+                .anyRequest().permitAll() // Requiere autenticación para todo lo demás
+            )
+            .sessionManagement(session -> session
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)); // Sin sesiones
 
-    //     return http.build();
-    // }
+        return http.build();
+    }
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
