@@ -46,7 +46,7 @@ public class ApplicationConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200")); // Origen del frontend
+        configuration.setAllowedOrigins(Arrays.asList("https://fitclubangular.onrender.com")); // Origen del frontend
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Métodos permitidos
         configuration.setAllowedHeaders(Arrays.asList("*")); // Todos los headers
         configuration.setAllowCredentials(true); // Permite credenciales (si usas cookies o auth headers)
